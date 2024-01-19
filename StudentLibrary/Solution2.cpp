@@ -1,4 +1,7 @@
 #include "Solution2.h"
+#include <fstream>
+#include <iostream>
+#include <string>
 
 #include <ostream>
 
@@ -8,6 +11,7 @@
 
 float Solution2::GetBalance(const std::string& accountName)
 {
+	std::ifstream file(accountName + ".txt");
 	return -1.0f;
 }
 
