@@ -40,7 +40,7 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 		case TemperatureUnits::KELVIN:
 			if (_to == TemperatureUnits::FAHRENHEIT)
 			{
-				resultat = (9 / 5 (resultat - 273.15)) + 32;
+				resultat = (9 / 5 * (resultat - 273.15)) + 32;
 				return std::round(resultat * 100) / 100;
 			}
 			else if (_to == TemperatureUnits::CELSIUS)
