@@ -18,40 +18,41 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 		case TemperatureUnits::CELSIUS:
 			if (_to == TemperatureUnits::FAHRENHEIT)
 			{
-				resultat = ((9 / 5) * _value) + 32;
-				return std::roundf(resultat * 100) / 100;
+				resultat = (9.0f / 5.0f) * _value + 32.0f;
+				break;
 			}
 			else if (_to == TemperatureUnits::KELVIN)
 			{
 				resultat = _value + 273.15f;
 				resultat = std::roundf(resultat * 100) / 100;
-				return resultat;
+				break;
 			}
 		case TemperatureUnits::FAHRENHEIT:
 			if (_to == TemperatureUnits::CELSIUS)
 			{
-				resultat = (5 / 9) * (_value - 32);
-				return std::roundf(resultat * 100) / 100;
+				resultat = (5.0f / 9.0f) * (_value - 32.0f);
+				break;
 			}
 			else if (_to == TemperatureUnits::KELVIN)
 			{
-				resultat = ((5 / 9) * (_value - 32)) + 273.15f;
-				return std::roundf(resultat * 100) / 100;
+				resultat = (5.0f / 9.0f) * (_value - 32.0f) + 273.15f;
+				break;
 			}
 		case TemperatureUnits::KELVIN:
 			if (_to == TemperatureUnits::FAHRENHEIT)
 			{
-				resultat = ((9 / 5) * (_value - 273.15f)) + 32;
-				return std::roundf(resultat * 100) / 100;
+				resultat = (9.0f / 5.0f) * (_value - 273.15f) + 32.0f;
+				break;
 			}
 			else if (_to == TemperatureUnits::CELSIUS)
 			{
 				resultat = _value - 273.15f;
-				return std::roundf(resultat * 100) / 100;
+				break;
 			}
 		default:
 			break;
 		}
+		return (resultat * 100.0f) / 100.0f;
 	}
 }
 

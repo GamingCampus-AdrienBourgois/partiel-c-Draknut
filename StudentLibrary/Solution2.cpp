@@ -1,8 +1,7 @@
 #include "Solution2.h"
 #include <fstream>
 #include <sstream>
-#include <stdexcept>
-#include <ostream>
+#include <string>
 
 #include <ostream>
 
@@ -30,7 +29,7 @@ float Solution2::GetBalance(const std::string& accountName)
             else if (operation == "WITHDRAW") {
                 balance -= amount;
             }
-        }
+        } 
     }
 
     file.close();
