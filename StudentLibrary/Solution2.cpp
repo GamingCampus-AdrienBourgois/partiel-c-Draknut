@@ -1,7 +1,8 @@
 #include "Solution2.h"
 #include <fstream>
 #include <sstream>
-#include <string>
+#include <stdexcept>
+#include <ostream>
 
 #include <ostream>
 
@@ -11,25 +12,29 @@
 
 float Solution2::GetBalance(const std::string& accountName)
 {
-
     std::ifstream file("BankAccount/" + accountName + ".txt");
     if (!file.is_open()) {
-        throw std::runtime_error("Could not open file");
+        throw std::runtime_error("File not found");
     }
 
-    double total = 0.0;
+    float balance = 0.0f;
     std::string line;
     while (std::getline(file, line)) {
         std::istringstream iss(line);
-        std::string order;
-        double amount;
-        if (!(iss >> order >> amount)) {
-            throw std::runtime_error("Invalid line format");
+        std::string operation;
+        float amount;
+        if ((iss >> operation >> amount)) {
+            if (operation == "DEPOSIT") {
+                balance += amount;
+            }
+            else if (operation == "WITHDRAW") {
+                balance -= amount;
+            }
         }
-        total += amount;
     }
 
-    return total;
+    file.close();
+    return balance;
 }
 
 #endif
