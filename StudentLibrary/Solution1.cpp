@@ -46,7 +46,7 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 			}
 			else if (_to == TemperatureUnits::CELSIUS)
 			{
-				resultat = _value - 273;
+				resultat = _value - 273.15;
 				return std::round(resultat * 100) / 100;
 			}
 		default:

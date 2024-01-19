@@ -11,7 +11,7 @@
 
 float Solution2::GetBalance(const std::string& accountName)
 {
-	std::ifstream file(accountName + ".txt");
+	std::ifstream file("BankAccount/"+accountName + ".txt");
 	if (!file) {
 		throw std::logic_error("Account not found !");
 	}
@@ -32,7 +32,7 @@ float Solution2::GetBalance(const std::string& accountName)
 			std::cerr << "Unknown operation: " << operation << std::endl;
 		}
 	}
-	
+	file.close();
 	return balance;
 }
 
