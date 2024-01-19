@@ -11,13 +11,13 @@ void Solution3::SetWords(const std::vector<std::string>& _words)
 
 void Solution3::SortWords()
 {
-    words = sortStrings(words);
+    //words = sortStrings(words);
 
-    for (const auto& word : words) {
-        std::cout << word << std::endl;
-    }
+    //for (const auto& word : words) {
+    //    std::cout << word << std::endl;
+    //}
 
-    return 0;
+    //return 0;
 }
 
 std::vector<std::string> Solution3::GetSortedWords() const
