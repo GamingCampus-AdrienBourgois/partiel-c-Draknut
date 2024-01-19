@@ -9,7 +9,17 @@ void Solution3::SetWords(const std::vector<std::string>& _words)
 	words = _words;
 }
 
-void Solution3::SortWords() {}
+void Solution3::SortWords() 
+{
+    std::vector<std::string> words = { "banana", "Apple", "cherry" };
+    words = sortStrings(words);
+
+    for (const auto& word : words) {
+        std::cout << word << std::endl;
+    }
+
+    return 0;
+}
 
 std::vector<std::string> Solution3::GetSortedWords() const
 {

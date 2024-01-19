@@ -6,12 +6,13 @@
 
 float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, TemperatureUnits _to)
 {
-	float resultat;
+	
 	if (_from == _to) {
 		return _value;
 	}
 	else
 	{
+		float resultat;
 		switch (_from)
 		{
 		case TemperatureUnits::CELSIUS:
