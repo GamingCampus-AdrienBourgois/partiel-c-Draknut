@@ -1,5 +1,5 @@
 #include "Solution1.h"
-
+#include  <cmath>
 // Don't fortget to enable the exercise in the SudentConfiguration.h file !
 #include "StudentConfiguration.h"
 #ifdef COMPILE_EXERCICE_1
